@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mr.Kamal Kumar Mittal – Portfolio</title>
+    <meta name="description"
+        content="Official professional portfolio for [Name] – leadership, innovation, featured work, publications, events, gallery, and press." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b1220;
+            /* deep navy */
+            --card: #0f172a;
+            /* slate */
+            --muted: #94a3b8;
+            /* slate-400 */
+            --text: #e2e8f0;
+            /* slate-200 */
+            --brand: #fbbf24;
+            /* amber */
+            --brand-2: #60a5fa;
+            /* blue */
+            --accent: #22c55e;
+            /* green */
+            --shadow: 0 20px 50px rgba(0, 0, 0, .45);
+            --radius: 22px;
+            --glass: rgba(255, 255, 255, .06);
+            --outline: rgba(255, 255, 255, .09);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(120deg, #0a0f1c 0%, #0b1220 40%, #0a1022 100%);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        /* Navbar */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: linear-gradient(180deg, rgba(10, 16, 28, .85), rgba(10, 16, 28, .45));
+            border-bottom: 1px solid var(--outline);
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin-inline: auto
+        }
+
+        .nav-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .3px
+        }
+
+        .brand span {
+            color: var(--brand)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center
+        }
+
+        .nav-links a {
+            opacity: .9
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--outline);
+            background: var(--glass);
+            padding: 10px 14px;
+            border-radius: 999px;
+            transition: .25s;
+            box-shadow: none
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow)
+        }
+
+        .btn.primary {
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            border-color: #1e293b
+        }
+
+        .btn.cta {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            color: #1c1917;
+            border: none;
+            font-weight: 700
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr .9fr;
+            gap: 40px;
+            padding: 72px 0 40px
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 7vw, 88px);
+            line-height: 1.05;
+            margin: 0 0 18px
+        }
+
+        .title .accent {
+            color: var(--brand)
+        }
+
+        .lead {
+            font-size: clamp(16px, 2.1vw, 20px);
+            color: var(--muted);
+            max-width: 720px
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 14px;
+            margin-top: 26px;
+            flex-wrap: wrap
+        }
+
+        .hero-card {
+            border-radius: var(--radius);
+            background: radial-gradient(1200px 600px at 80% -10%, rgba(96, 165, 250, .25), transparent 50%), var(--glass);
+            border: 1px solid var(--outline);
+            padding: 16px;
+            perspective: 1200px;
+            box-shadow: var(--shadow);
+        }
+
+        .tilt {
+            transform-style: preserve-3d;
+            border-radius: calc(var(--radius) - 8px);
+            overflow: hidden;
+        }
+
+        .tilt img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            transform: translateZ(40px)
+        }
+
+        /* Chips */
+        .chips {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 14px
+        }
+
+        .chip {
+            padding: 6px 10px;
+            border: 1px solid var(--outline);
+            background: var(--glass);
+            border-radius: 999px;
+            font-size: 12px;
+            color: #cbd5e1
+        }
+
+        /* Sections */
+        section {
+            padding: 72px 0
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4.6vw, 44px);
+            margin: 0 0 6px
+        }
+
+        .section-sub {
+            color: var(--muted);
+            max-width: 760px
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            gap: 22px
+        }
+
+        .grid.cols-3 {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        .grid.cols-2 {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        @media (max-width:960px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+
+            .grid.cols-3 {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .tilt img {
+                height: 420px
+            }
+        }
+
+        @media (max-width:640px) {
+
+            .grid.cols-3,
+            .grid.cols-2 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01));
+            border: 1px solid var(--outline);
+            border-radius: 18px;
+            padding: 18px;
+            transition: .3s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .card:hover {
+            transform: translateY(-6px)
+        }
+
+        .card .icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(96, 165, 250, .25), rgba(251, 191, 36, .2));
+            margin-bottom: 10px
+        }
+
+        .card h3 {
+            margin: 10px 0 8px
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 12px;
+            background: rgba(251, 191, 36, .12);
+            color: #fde68a;
+            padding: 4px 8px;
+            border-radius: 999px
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin-top: 18px
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 22px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--brand), transparent)
+        }
+
+        .t-item {
+            padding-left: 58px;
+            margin: 18px 0;
+            position: relative
+        }
+
+        .t-item::before {
+            content: "";
+            position: absolute;
+            left: 14px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--brand)
+        }
+
+        /* Project cards */
+        .p-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .p-thumb {
+            border-radius: 14px;
+            overflow: hidden;
+            height: 190px;
+            background: #0b1328
+        }
+
+        .p-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .p-meta {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        /* Filter pills */
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 14px 0 22px
+        }
+
+        .pill {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--outline);
+            background: var(--glass);
+            cursor: pointer;
+            font-size: 13px
+        }
+
+        .pill.active {
+            background: linear-gradient(90deg, rgba(96, 165, 250, .25), rgba(251, 191, 36, .25));
+        }
+
+        /* Gallery masonry */
+        .masonry {
+            column-count: 3;
+            column-gap: 16px
+        }
+
+        .m-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--outline)
+        }
+
+        .m-item img {
+            width: 100%;
+            display: block
+        }
+
+        .m-cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 10px 12px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .0), rgba(0, 0, 0, .6));
+            font-size: 13px
+        }
+
+        @media(max-width:960px) {
+            .masonry {
+                column-count: 2
+            }
+        }
+
+        @media(max-width:640px) {
+            .masonry {
+                column-count: 1
+            }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            display: none;
+            place-items: center;
+            background: rgba(0, 0, 0, .6);
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox.open {
+            display: grid
+        }
+
+        .lightbox img,
+        .lightbox video {
+            max-width: 92vw;
+            max-height: 86vh;
+            border-radius: 14px;
+            border: 1px solid var(--outline);
+        }
+
+        /* Press slider */
+        .press {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid var(--outline)
+        }
+
+        .press-track {
+            display: flex;
+            gap: 18px;
+            padding: 18px;
+            animation: scroll 24s linear infinite
+        }
+
+        .press img {
+            height: 120px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: .8
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* Testimonials */
+        .quote {
+            font-size: 18px;
+            color: #dbeafe
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 22px
+        }
+
+        @media(max-width:860px) {
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--outline);
+            background: #0b1324;
+            color: var(--text)
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        /* Footer */
+        footer {
+            background: #07101f;
+            border-top: 1px solid var(--outline);
+            padding: 40px 0 60px;
+            color: #cbd5e1
+        }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: .7s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none
+        }
+
+        /* Dark/Light toggle */
+        .theme {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 1000
+        }
+
+        .theme button {
+            border-radius: 999px;
+            padding: 10px 14px;
+            border: 1px solid var(--outline);
+            background: var(--glass);
+            color: var(--text)
+        }
+
+        /* Print friendly (press kit) */
+        @media print {
+
+            .nav,
+            .theme,
+            .cta-row a[href^='#contact'],
+            .masonry,
+            .lightbox {
+                display: none !important
+            }
+
+            body {
+                background: #fff;
+                color: #111
+            }
+
+            .card,
+            .hero-card {
+                border: 1px solid #ddd;
+                box-shadow: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating theme toggle -->
+    <div class="theme"><button id="toggleTheme" aria-label="Toggle theme">🌓 Theme</button></div>
+
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <div class="container nav-wrap">
+            <div class="brand">
+                <span>
+                    <h2>Mr. Kamal Kumar Mittal</h2>
+                </span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Portfolio</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#press">Press</a>
+                <a href="#contact">Contact</a>
+                <a class="btn" href="#" download>Download CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="container hero">
+        <div>
+            <h1 class="title reveal">Driving <span class="accent">Change</span> for the People</h1>
+            <p class="lead reveal">Committed to public service, strengthening democracy, and working tirelessly
+                for inclusive growth, social justice, and the welfare of every citizen.</p>
+            <div class="cta-row reveal">
+                <a class="btn cta" href="#work">View Initiatives</a>
+                <a class="btn" href="#contact">Connect for Collaboration</a>
+            </div>
+            <div class="chips reveal">
+                <span class="chip">Public Service</span>
+                <span class="chip">Community Welfare</span>
+                <span class="chip">Education</span>
+                <span class="chip">Healthcare</span>
+                <span class="chip">Youth Empowerment</span>
+                <span class="chip">Sustainable Development</span>
+            </div>
+        </div>
+
+        </div>
+        <div class="hero-card">
+            <div class="tilt" id="tiltCard">
+                <img src="self1.jpg" alt="Professional portrait" />
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        <p class="section-sub reveal">“A visionary leader who always stands to help people in every situation —
+            committed to uplifting the underprivileged, empowering the youth, and working tirelessly for justice,
+            equality, and sustainable progress. With dedication to democratic values and the welfare of every citizen,
+            he continues to inspire hope and drive positive change for society.” .</p>
+
+        <div class="grid cols-3" style="margin-top:22px">
+            <div class="card reveal">
+                <div class="icon">🗳️</div>
+                <h3>Public Service</h3>
+                <p>Dedicated to serving the people with transparency, accountability, and commitment to progress.</p>
+            </div>
+            <div class="card reveal">
+                <div class="icon">🤝</div>
+                <h3>Grassroots Leadership</h3>
+                <p>Strong connection with communities, addressing local issues and empowering citizens.</p>
+            </div>
+            <div class="card reveal">
+                <div class="icon">🏛️</div>
+                <h3>Political Vision</h3>
+                <p>Focused on inclusive growth, social justice, and sustainable development for all.</p>
+            </div>
+        </div>
+
+
+        <div class="timeline reveal">
+            <div class="t-item"><strong>Age:</strong> 57 years</div>
+            <div class="t-item"><strong>Political Party:</strong> Indian National Congress</div>
+            <div class="t-item"><strong>Date of Birth:</strong> 30 May 1968</div>
+            <div class="t-item"><strong>Education:</strong> M.A. (Hindi, Economics), B.Ed, LL.B, Sahitya Ratna
+                (Sanskrit), Ayurveda Ratna</div>
+        </div>
+
+    </section>
+
+    <!-- WORK / PORTFOLIO -->
+    <section id="work" class="container">
+        <h2 class="section-title reveal">Featured Work</h2>
+        <p class="section-sub reveal">Showcasing transformational projects and strategic initiatives that drove
+            measurable impact.</p>
+
+        <div class="filters reveal">
+            <button class="pill active" data-filter="all">All</button>
+            <button class="pill" data-filter="strategy">Strategy</button>
+            <button class="pill" data-filter="innovation">Innovation</button>
+            <button class="pill" data-filter="sustainability">Sustainability</button>
+            <button class="pill" data-filter="leadership">Leadership</button>
+        </div>
+
+        <div class="grid cols-3" id="projectGrid">
+            <article class="card p-card reveal" data-tags="development leadership">
+                <div class="p-thumb"><img src="new.jpeg" alt="Rural Development" /></div>
+                <h3>Rural Development Program</h3>
+                <p>Initiated projects to improve roads, clean drinking water, and rural electrification, impacting 200+
+                    villages.</p>
+                <div class="p-meta"><span class="tag">Development</span><span class="tag">Infrastructure</span></div>
+            </article>
+
+            <article class="card p-card reveal" data-tags="education youth">
+                <div class="p-thumb"><img src="news2.jpeg" alt="Education Reform" /></div>
+                <h3>Education for All</h3>
+                <p>Launched scholarship schemes and digital classrooms, enabling access to quality education for
+                    underprivileged children.</p>
+                <div class="p-meta"><span class="tag">Education</span><span class="tag">Youth Empowerment</span></div>
+            </article>
+
+            <article class="card p-card reveal" data-tags="healthcare sustainability">
+                <div class="p-thumb"><img src="news3.jpeg" alt="Healthcare Initiative" /></div>
+                <h3>Healthcare Access</h3>
+                <p>Set up mobile health camps and affordable treatment programs, benefiting thousands in rural and urban
+                    areas.</p>
+                <div class="p-meta"><span class="tag">Healthcare</span><span class="tag">Welfare</span></div>
+            </article>
+
+            <article class="card p-card reveal" data-tags="women empowerment growth">
+                <div class="p-thumb"><img src="new4.jpeg" alt="Women Empowerment" /></div>
+                <h3>Women Empowerment</h3>
+                <p>Introduced self-help groups, skill training, and micro-finance programs to empower women economically
+                    and socially.</p>
+                <div class="p-meta"><span class="tag">Women</span><span class="tag">Empowerment</span></div>
+            </article>
+
+            <article class="card p-card reveal" data-tags="youth leadership">
+                <div class="p-thumb"><img src="news5.jpeg" alt="Youth Leadership" /></div>
+                <h3>Youth Leadership Program</h3>
+                <p>Mentored young leaders and created internship programs for political awareness and community
+                    engagement.</p>
+                <div class="p-meta"><span class="tag">Youth</span><span class="tag">Leadership</span></div>
+            </article>
+
+            <article class="card p-card reveal" data-tags="environment sustainability">
+                <div class="p-thumb"><img src="news6.jpeg" alt="Environmental Drive" /></div>
+                <h3>Clean & Green Mission</h3>
+                <p>Led large-scale tree plantation and waste management drives to promote sustainability and climate
+                    action.</p>
+                <div class="p-meta"><span class="tag">Environment</span><span class="tag">Sustainability</span></div>
+            </article>
+        </div>
+
+
+
+        <!-- GALLERY (Photos + Video + Newspaper/Press clippings) -->
+        <section id="gallery" class="container">
+            <h2 class="section-title reveal">Glimpses & Gallery</h2>
+            <p class="section-sub reveal">A curated look at moments from keynotes, award ceremonies, field visits, and
+                media
+                coverage.</p>
+
+            <!-- Video highlight -->
+            <div class="card reveal" style="margin:18px 0">
+                <h3>Highlight Reel</h3>
+                <p class="section-sub">2‑minute highlight video featuring events and collaborations.</p>
+                <div
+                    style="position:relative; padding-top:56.25%; border-radius:14px; overflow:hidden; border:1px solid var(--outline)">
+                    <iframe style="position:absolute; inset:0; width:100%; height:100%;" src="motivation.mp4"
+                        title="Highlight Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Masonry photos & clippings with lightbox -->
+            <!-- Masonry photos & clippings with lightbox -->
+            <section style="padding:40px;">
+                <div id="masonry"
+                    style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:16px;">
+
+                    <img src="gal1.jpeg" alt="Award ceremony"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="gal2.jpeg" alt="Keynote session"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="news2.jpeg" alt="Award ceremony"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="gal4.jpeg" alt="Award ceremony"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="news8.jpeg" alt="Newspaper clipping"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="news7.jpeg" alt="Newspaper clipping"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="news8.jpeg" alt="Panel discussion"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="news9.jpeg" alt="Panel discussion"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="news3.jpeg" alt="Workshop"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="news10.jpeg" alt="Workshop"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="new4.jpeg" alt="Newspaper clipping 2"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+                    <img src="new.jpeg" alt="Newspaper clipping 2"
+                        style="width:100%; height:220px; object-fit:cover; display:block; cursor:pointer;"
+                        onclick="openLightbox(this)" />
+
+                </div>
+            </section>
+
+            <!-- Lightbox Overlay -->
+            <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+            background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+                <img id="lightbox-img" style="max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.5); 
+              animation:zoomIn 0.4s ease;" />
+            </div>
+
+            <!-- Animation -->
+            <style>
+                @keyframes zoomIn {
+                    from {
+                        transform: scale(0.7);
+                        opacity: 0;
+                    }
+
+                    to {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+            </style>
+
+            <!-- Script -->
+            <script>
+                function openLightbox(img) {
+                    const lightbox = document.getElementById("lightbox");
+                    const lightboxImg = document.getElementById("lightbox-img");
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = img.src;
+                }
+
+                document.getElementById("lightbox").addEventListener("click", function () {
+                    this.style.display = "none";
+                });
+            </script>
+
+
+            <!-- PRESS STRIP -->
+            <section id="press" class="container">
+                <h2 class="section-title reveal">Media & Press</h2>
+                <p class="section-sub reveal">Appearances in newspapers, magazines, podcasts, and television.</p>
+                <div class="press reveal">
+                    <div class="press-track">
+                        <img src="news10.jpeg" alt="The Times" />
+                        <img src="news9.jpeg" alt="Forbes" />
+                        <img src="news8.jpeg" alt="BBC" />
+                        <img src="news7.jpeg" alt="Economic Times" />
+                        <img src="news6.jpeg" alt="The Guardian" />
+                        <!-- loop again for seamless scroll -->
+                        <img src="news5.jpeg" alt="The Times" />
+                        <img src="new4.jpeg" alt="Forbes" />
+                        <img src="news3.jpeg" alt="BBC" />
+                        <img src="news2.jpeg" alt="Economic Times" />
+                        <img src="news.jpeg" alt="The Guardian" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- TESTIMONIALS / CALLOUT -->
+            <section class="container">
+                <div class="grid cols-2">
+                    <div class="card reveal">
+                        <h3>What People Say</h3>
+                        <p class="quote">“ My friend kamal ji blends vision with execution. Their strategies created
+                            tangible
+                            value for our
+                            BKU always help in solving all problems with a greater solution.”</p>
+                        <p>— Mr. Naresh Tikait , BKU</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Speaking Topics</h3>
+                        <ul>
+                            <li>Transformational Leadership & Culture</li>
+                            <li>AI for Impact: From Hype to Value</li>
+                            <li>Building Sustainable, Resilient Organizations</li>
+                        </ul>
+                        <a class="btn" href="#contact">Request a session</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" class="container">
+                <h2 class="section-title reveal">Get In Touch</h2>
+                <p class="section-sub reveal">Ready to collaborate on your next breakthrough? Let's talk.</p>
+
+                <div class="contact-grid">
+                    <div class="card reveal">
+                        <p>📧 <strong>Email:</strong> kamalsisauli@gmail.com</p>
+                        <p>📞 <strong>Phone:</strong> +91 9897415932</p>
+                        <p>📍 <strong>Location:</strong> Muzaffarnagar Uttar Pradesh, India</p>
+                        <div class="chips">
+                            <a class="chip" href="https://www.facebook.com/kamal.mittal.5205">Facebook</a>
+                            <a class="chip"
+                                href="https://www.facebook.com/people/Kamal-Mittal-Politician/100063830444784/">Facebook
+                                Page</a>
+                            <a class="chip" href="https://x.com/the_KamalMittal?t=15ef_OmZDXRDpaqBtUrdDQ&s=08">Twitter /
+                                X</a>
+                            <a class="chip"
+                                href="https://www.instagram.com/kamal_kumar_mittal/?utm_source=qr&igsh=cHdob2JraHlydXhs#">Instagram</a>
+
+                        </div>
+                    </div>
+                    <form class="card reveal" onsubmit="event.preventDefault(); fakeSubmit();">
+                        <div class="grid cols-2">
+                            <input required placeholder="Name" />
+                            <input required type="email" placeholder="Email" />
+                        </div>
+                        <input placeholder="Subject" style="margin-top:10px" />
+                        <textarea placeholder="Message" style="margin-top:10px"></textarea>
+                        <div style="display:flex; justify-content:flex-end; margin-top:10px">
+                            <button class="btn primary" type="submit">Send Message ✈️</button>
+                        </div>
+                        <small id="formMsg" style="opacity:.8"></small>
+                    </form>
+                </div>
+            </section>
+
+            <footer>
+                <div class="container">
+                    <div class="grid cols-3">
+                        <div>
+                            <div class="brand">[<span>Mr. Kamal Kumar Mittal</span>]</div>
+                            <p style="max-width:440px">Driving excellence through strategic leadership and innovative
+                                thinking.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Quick Links</h4>
+                            <p><a href="#about">About</a> · <a href="#work">Portfolio</a> · <a href="#press">Press</a> ·
+                                <a href="#contact">Contact</a>
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Stay Updated</h4>
+                            <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+                                <input placeholder="Your email" />
+                            </form>
+                        </div>
+                    </div>
+                    <p style="margin-top:22px; color:#94a3b8">© <span id="year"></span> All rights reserved.  •  Made
+                        with ♥ for excellence.</p>
+                </div>
+            </footer>
+
+            <!-- LIGHTBOX -->
+            <div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
+                <img id="lbImg" alt="Preview" />
+                <video id="lbVid" controls style="display:none"></video>
+            </div>
+
+            <script>
+                // Dynamic year
+                document.getElementById('year').textContent = new Date().getFullYear();
+
+                // Intersection Observer: reveal on scroll
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+                }, { threshold: .12 });
+                document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+                // 3D tilt for hero image
+                const card = document.getElementById('tiltCard');
+                card.addEventListener('mousemove', (e) => {
+                    const r = card.getBoundingClientRect();
+                    const x = e.clientX - r.left; const y = e.clientY - r.top;
+                    const rx = ((y / r.height) - .5) * -10; // rotate X
+                    const ry = ((x / r.width) - .5) * 10;  // rotate Y
+                    card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+                });
+                card.addEventListener('mouseleave', () => card.style.transform = 'rotateX(0) rotateY(0)');
+
+                // Filter projects
+                const pills = document.querySelectorAll('.pill');
+                const projects = document.querySelectorAll('#projectGrid .p-card');
+                pills.forEach(p => p.addEventListener('click', () => {
+                    pills.forEach(x => x.classList.remove('active')); p.classList.add('active');
+                    const f = p.dataset.filter;
+                    projects.forEach(pr => {
+                        if (f === 'all' || pr.dataset.tags.includes(f)) pr.style.display = 'flex';
+                        else pr.style.display = 'none';
+                    });
+                }));
+
+                // Lightbox for gallery
+                const lb = document.getElementById('lightbox');
+                const lbImg = document.getElementById('lbImg');
+                const lbVid = document.getElementById('lbVid');
+                document.getElementById('masonry').addEventListener('click', (e) => {
+                    const a = e.target.closest('a.m-item'); if (!a) return; e.preventDefault();
+                    const type = a.dataset.type;
+                    lb.classList.add('open');
+                    if (type === 'img') {
+                        lbVid.style.display = 'none'; lbImg.style.display = 'block'; lbImg.src = a.href;
+                    } else if (type === 'video') {
+                        lbImg.style.display = 'none'; lbVid.style.display = 'block'; lbVid.src = a.href; lbVid.play();
+                    }
+                });
+
+                // Fake form submit
+                function fakeSubmit() {
+                    const msg = document.getElementById('formMsg');
+                    msg.textContent = 'Thanks! Your message has been received.';
+                    setTimeout(() => msg.textContent = '', 4000);
+                }
+
+                // Theme toggle (light/dark)
+                const toggle = document.getElementById('toggleTheme');
+                let light = false;
+                toggle.addEventListener('click', () => {
+                    light = !light;
+                    document.documentElement.style.setProperty('--bg', light ? '#f8fafc' : '#0b1220');
+                    document.body.style.background = light ? '#f8fafc' : 'linear-gradient(120deg,#0a0f1c 0%, #0b1220 40%, #0a1022 100%)';
+                    document.documentElement.style.setProperty('--text', light ? '#0b1220' : '#e2e8f0');
+                    document.documentElement.style.setProperty('--muted', light ? '#475569' : '#94a3b8');
+                    document.querySelectorAll('.card, .btn, .chip, .nav').forEach(el => {
+                        el.style.transition = 'background .25s, color .25s, border-color .25s';
+                    });
+                });
+            </script>
+</body>
+
+</html>
