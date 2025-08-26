@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://ravinamittal.github.io/portfolio_eminent_personality/sitemap.xml
